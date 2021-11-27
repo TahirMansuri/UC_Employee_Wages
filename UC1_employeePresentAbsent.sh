@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Variables
 isPresent=1;
 randomCheck=$((RANDOM%2));
 
