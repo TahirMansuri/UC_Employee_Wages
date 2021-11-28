@@ -12,11 +12,8 @@ totalEmpHrs=0;
 totalWorkingDays=1;
 totalSalary=0;
 
-
-while (( $totalEmpHrs < $MAX_HOURS_IN_MONTH && 
-	$totalWorkingDays <= $TOTAL_WORKING_DAYS ))
-do
-
+function getWorkingHours()
+{
 	randomCheck=$((RANDOM%3));
 	case $randomCheck in
 		$IS_FULL_TIME)
@@ -29,6 +26,12 @@ do
 			empHrs=0;
 		;;
 	esac
+}
+
+while (( $totalEmpHrs < $MAX_HOURS_IN_MONTH && 
+	$totalWorkingDays <= $TOTAL_WORKING_DAYS ))
+do
+	getWorkingHours
 
 	((totalWorkingDays++));
 	totalEmpHrs=$(($totalEmpHrs+$empHrs));
